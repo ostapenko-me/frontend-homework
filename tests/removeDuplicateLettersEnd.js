@@ -27,4 +27,11 @@ QUnit.module('Тестируем функцию removeDuplicateLettersEnd', func
 		assert.strictEqual(removeDuplicateLettersEnd('от топота копыт'), 'а копыт');
 		assert.strictEqual(removeDuplicateLettersEnd('hello world'), 'he world');
 	});
+
+	QUnit.test('Негативное тестирование функции', function(assert) {
+		assert.strictEqual(removeDuplicateLettersEnd(''), '', 'okay - (\'\')');
+		assert.strictEqual(removeDuplicateLettersEnd(), '', 'okay - ()');
+		assert.strictEqual(removeDuplicateLettersEnd('my                code'), 'my code', 'okay - (my                code)');
+	});
+		
 });
