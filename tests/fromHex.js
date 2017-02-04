@@ -17,4 +17,9 @@ QUnit.module('Тестируем функцию fromHex', function () {
 		assert.strictEqual(fromHex('0xA0'), '10100000b');
 		assert.strictEqual(fromHex('0x9d'), '10011101b');
 	});
+
+	QUnit.test('К результату последним символом прибавляется \'b\'', function (assert) {
+		assert.strictEqual(fromHex('4'), '100b');
+		assert.notStrictEqual(fromHex('8'), '1000');
+	})
 });
