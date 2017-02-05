@@ -9,6 +9,8 @@ QUnit.module('Тестируем функцию euclid', function () {
 		assert.strictEqual(euclid(7, 7, 13), 1, 'euclid(7, 7, 13) === 1');
 		assert.strictEqual(euclid(2, 14, 16), 2, 'euclid(2, 14, 16) === 2');
 		assert.strictEqual(euclid(7, 14, 21), 7, 'euclid(7, 14, 21) === 7');
+		assert.strictEqual(euclid(2340, 204, 6534), 6, 'euclid(2340, 204, 6534) === 6');
+		assert.strictEqual(euclid(606, 303, 909), 303, 'euclid(606, 303, 909) === 303');
 		assert.strictEqual(euclid(6006, 3738735, 51051), 3003, 'euclid(6006, 3738735, 51051) === 3003');
 	});
 });
