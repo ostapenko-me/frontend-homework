@@ -19,4 +19,8 @@ QUnit.module('Тестируем функцию toUpperCase', function () {
 		assert.strictEqual(toUpperCase('hello, world!'), 'Hello, World!');
 		assert.strictEqual(toUpperCase('пРиВет, МИР!'), 'Привет, Мир!');
 	});
+
+	QUnit.test('Функция работает с произвольным текстом', function (assert) {
+		assert.strictEqual(toUpperCase('heLLo, worlD! прИвеТ, мИр!'), 'Hello, World! Привет, Мир!');
+	});
 });
