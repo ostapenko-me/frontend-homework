@@ -5,5 +5,6 @@ const max = function (numbers) {
 };
 
 const fromHex = function (hexString) {
-	return parseInt(hexString, 16).toString(2) + 'b';
+	let binString = parseInt(hexString, 16).toString(2);
+	return `${binString}b`;
 };
