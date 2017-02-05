@@ -21,4 +21,10 @@ QUnit.module('Тестируем функцию sortString', function () {
 		assert.strictEqual(sortString('i love frontend'), 'defnnort elov i');
 		assert.strictEqual(sortString('hello world'), 'dlorw ehllo');
 	});
+
+	QUnit.test('Свои тесты', function (assert) {
+		assert.strictEqual(sortString('жжж ееее ёёёёё'), 'ееее ёёёёё жжж');
+		assert.strictEqual(sortString('строка с русскими and english letters'), 'акорст иикмрссу с adn eelrstt eghilns');
+
+	});
 });
