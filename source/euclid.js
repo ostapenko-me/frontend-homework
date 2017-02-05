@@ -4,8 +4,9 @@
 'use strict';
 
 
-const two_numbers_nod = function (a, b) {
-    while (a != 0 && b != 0)
+const twoNumbersNod = function (a, b) 
+{
+    while (a && b)
     {
         if (a > b)
         {
@@ -21,13 +22,13 @@ const two_numbers_nod = function (a, b) {
 
 const euclid = function ()
 {
-    if(arguments.length != 3)
+    if(arguments.length !== 3)
     {
-        return ;
+        return;
     }
     var numbers = arguments;
     var nod = numbers[0];
-    nod = two_numbers_nod(numbers[1], nod);
-    nod = two_numbers_nod(numbers[2], nod);
+    nod = twoNumbersNod(numbers[1], nod);
+    nod = twoNumbersNod(numbers[2], nod);
     return nod;
 };
