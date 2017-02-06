@@ -1,12 +1,10 @@
 'use strict';
 
 const inverse = function (array) {
-    var inversed = [];
-    if (array.length > 0) {
-        inversed.push(array.shift());
-        while (array.length != 0) {
-            inversed.push(array.pop());
-        }
+    var inversed = array;
+    if (inversed.length != 0) {
+        inversed.reverse();
+        inversed.unshift(inversed.pop());
     }
 	return inversed;
 };
