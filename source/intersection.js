@@ -5,13 +5,12 @@
 
 const intersection = function () {
     var arrays = Array.from(arguments);
-
     var resultArr = arrays[0];
     if (resultArr.length <= 1) {
         return resultArr;
     } else {
         for (var i = 1; i < arrays.length; i++) {
-            var currArr = arrays[i];
+            let currArr = arrays[i];
             var j = 0;
             while (j < resultArr.length) {
                 var resultItem = resultArr[j];
