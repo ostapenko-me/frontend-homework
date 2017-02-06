@@ -30,6 +30,7 @@ QUnit.module('Тестируем функцию intersection', function () {
 		arrayCompare(intersection(['a']), ['a'], assert);
 		arrayCompare(intersection(['a', false]), ['a', false], assert);
 		arrayCompare(intersection([NaN, Infinity]), [Infinity, NaN], assert);
+		arrayCompare(intersection([NaN, true, 'a', -1]), [NaN, true, 'a', -1], assert);
 	});
 
 	QUnit.test('intersection работает с одинаковыми массивами', function (assert) {
@@ -47,5 +48,6 @@ QUnit.module('Тестируем функцию intersection', function () {
 		arrayCompare(intersection([1, 2, 3], [1, 2, 4], [1, 2, 5]), [2, 1], assert);
 		arrayCompare(intersection([1, 2, 2], [2, 2, 3], [1, 2, 2, 5], [null, 2, '2', 2, false]), [2, 2], assert);
 		arrayCompare(intersection(['1', '2', '3', true], [1, 2, 3, true], [1, 2, '3', false]), [], assert);
-	});
+        arrayCompare(intersection(['ads', Infinity, NaN, -1, false, true], [true, 'ads', 'sads', NaN]), ['ads', NaN, true], assert);
+    });
 });
