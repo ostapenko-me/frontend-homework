@@ -3,7 +3,7 @@ const inverse = function (array) {
         return array;
     }
 
-    reversed_subarray = array.splice(1, array.length - 1).reverse();
+    let reversed_subarray = array.splice(1, array.length - 1).reverse();
 
     return array.concat(reversed_subarray);
 };
