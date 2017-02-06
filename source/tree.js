@@ -10,8 +10,7 @@ function drawLayer(ch, num, height)
     for(let i = 0; i<height-2-num; i++) space += " ";
     result += space;
     for(let i = 0;i<2*num+1;i++) result += ch;
-    result += space + "\n";
-    return result;
+    return result += space + "\n";   
 }
 
 function growTree(height)
