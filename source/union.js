@@ -1,21 +1,25 @@
 'use strict';
 
 
+const unique = (from, to = []) => {
+	from.forEach((item) => {
+		if (!to.includes(item)) { to.push(item); }
+	});
+
+	return to;
+}
+
+
 const union = (...args) => {
-	var union = [];
+	if (args.length < 1) { return []; }
+	if (args.length == 1) { return unique(args[0]); }
 
-	args[0].forEach((el) => {
-		if (typeof el == "string") {
-			if (!union.includes(el)) union.push(el);
-			return;
-		}
+	let union = args[0];
 
-		union.push(el);
-	})
-
-	for (var i = 1; i < args.length; i++) {
-		args[i].forEach((el) => { if (!union.includes(el)) union.push(el); });
+	for (let i = 1; i < args.length; i++) {
+		unique(args[i], union);
 	}
 
 	return union;
 }
+
