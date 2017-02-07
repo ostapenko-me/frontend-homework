@@ -10,7 +10,7 @@ const intersection = function () {
         return resultArr;
     } else {
         for (var i = 1; i < arrays.length; i++) {
-            let currArr = arrays[i];
+            var currArr = arrays[i];
             var j = 0;
             while (j < resultArr.length) {
                 var resultItem = resultArr[j];
@@ -20,8 +20,6 @@ const intersection = function () {
                         findCheck = true;
                         currArr.splice(k, 1);
                         break;
-                    } else {
-
                     }
                 }
                 if (!findCheck) {
