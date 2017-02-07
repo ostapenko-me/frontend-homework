@@ -19,6 +19,6 @@ QUnit.module('Тестируем функцию removeAllDuplicateLetters', func
 		assert.strictEqual(removeAllDuplicateLetters('привет, мир'), 'пвет, м');
 		assert.strictEqual(removeAllDuplicateLetters('hello, world'), 'he, wrd');
 		assert.strictEqual(removeAllDuplicateLetters('мама мыла раму'), 'ылру');
-		assert.strictEqual(removeAllDuplicateLetters('"Кукареку!", сказал Петух'), 'Кр!,скзлПтух');
+		assert.strictEqual(removeAllDuplicateLetters('"Кукареку!", сказал Петух'), 'р!,скзлПтх');
 	});
 });
