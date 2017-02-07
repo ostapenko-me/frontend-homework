@@ -7,20 +7,25 @@ function tree(height)
 function drawLayer(ch, num, height)
 {
     let space = "", result = "";
-    for(let i = 0; i<height-2-num; i++) space += " ";
+    for (let i = 0; i < height - 2 - num; i++)
+    {
+        space += " ";
+    }
     result += space;
-    for(let i = 0;i<2*num+1;i++) result += ch;
+    for (let i = 0; i < 2 * num + 1; i++)
+    {
+        result += ch;
+    }
     return result += space + "\n";   
 }
 
 function growTree(height)
 {
     let result = "";
-    for(let i = 0; i < height-1; i++)
+    for (let i = 0; i < height-1; i++)
     {
-        result += drawLayer("*",i,height);
+        result += drawLayer("*", i, height);
     }
-    result += drawLayer("|",0,height); 
+    result += drawLayer("|", 0, height); 
     return result;
-    
 }
