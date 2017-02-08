@@ -8,7 +8,6 @@ function zip(...objects)
 			if (!(property in result))
 			{
 				result[property] = objects[i][property];
-				console.log(objects[i][property]);
 			}
 		}
 	}	
