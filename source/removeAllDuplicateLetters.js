@@ -12,3 +12,4 @@ const removeAllDuplicateLetters = function (myString) {
 	}
 	return result;
 };
+
