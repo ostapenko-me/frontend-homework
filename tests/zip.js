@@ -10,6 +10,11 @@ QUnit.module('Тестируем функцию zip', function () {
 			cost: '120$'
 		};
 		assert.deepEqual(zip(obj), obj);
+		
+		let testObj = {};
+		testObj.count = false;
+		testObj.cost = undefined;
+		assert.deepEqual(zip(testObj), testObj);
 	});
 
 	QUnit.test('Функция работает с объектами среди которых есть ', function (assert) {
@@ -23,6 +28,11 @@ QUnit.module('Тестируем функцию zip', function () {
 			count: 0,
 			cost: '120$'
 		};
+		
+		let testObj = {};
+		testObj.count = false;
+		testObj.cost = NaN;
+		assert.deepEqual(zip(testObj, {}, {}), testObj);
 
 		assert.deepEqual(zip({}, {}, {}, obj, {}, {}), obj);
 	});
