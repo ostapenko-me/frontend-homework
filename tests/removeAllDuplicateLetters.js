@@ -21,4 +21,10 @@ QUnit.module('Тестируем функцию removeAllDuplicateLetters', func
 		assert.strictEqual(removeAllDuplicateLetters('мама мыла раму'), 'ылру');
 		assert.strictEqual(removeAllDuplicateLetters('"Кукареку!", сказал Петух'), 'р!,сзлПтх');
 	});
+
+	QUnit.test('Удаляет повторяющиеся буквы в одном слове', function (assert) {
+		assert.strictEqual(removeAllDuplicateLetters('привет'), 'привет');
+		assert.strictEqual(removeAllDuplicateLetters('hellolll'), 'heo');
+		assert.strictEqual(removeAllDuplicateLetters('тата'), '');
+	});
 });
