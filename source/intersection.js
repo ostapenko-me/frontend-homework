@@ -3,7 +3,7 @@
 /*Метод заключается в том, что берется первый входящий массив(resultArr) и все последующие сравниваются с ним.
 * По мере сравнения из массива resultArr удаляются непересекающиеся элементы.*/
 
-const intersection = function () {
+var intersection = function () {
     var arrays = Array.from(arguments);
     var resultArr = arrays[0];
     if (resultArr.length <= 1) {
