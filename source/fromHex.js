@@ -1,5 +1,3 @@
 'use strict';
 
-const fromHex = function (hexStr) {
-	return parseInt(hexStr, 16).toString(2)+'b';
-};
+const fromHex = hexStr => `${parseInt(hexStr, 16).toString(2)}b`;
