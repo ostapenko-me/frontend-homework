@@ -5,6 +5,7 @@ QUnit.module('Тестируем функцию removeDuplicateLettersBegin', fu
 		assert.strictEqual(removeDuplicateLettersBegin('1234'), '1234');
 		assert.strictEqual(removeDuplicateLettersBegin('abcd'), 'abcd');
 		assert.strictEqual(removeDuplicateLettersBegin('олдж фыва'), 'олдж фыва');
+		assert.strictEqual(removeDuplicateLettersBegin('linux'), 'linux');
 		assert.strictEqual(removeDuplicateLettersBegin(',.;=\n\t '), ',.;=\n\t ');
 	});
 
@@ -12,6 +13,7 @@ QUnit.module('Тестируем функцию removeDuplicateLettersBegin', fu
 		assert.strictEqual(removeDuplicateLettersBegin('1111'), '1');
 		assert.strictEqual(removeDuplicateLettersBegin('aaaa'), 'a');
 		assert.strictEqual(removeDuplicateLettersBegin('ыыыы'), 'ы');
+		assert.strictEqual(removeDuplicateLettersBegin('бббббб'), 'б');
 		assert.strictEqual(removeDuplicateLettersBegin('==== ||||'), '= |');
 	});
 
@@ -19,6 +21,7 @@ QUnit.module('Тестируем функцию removeDuplicateLettersBegin', fu
 		assert.strictEqual(removeDuplicateLettersBegin('12111'), '12');
 		assert.strictEqual(removeDuplicateLettersBegin('qwqqq'), 'qw');
 		assert.strictEqual(removeDuplicateLettersBegin('ыцыыы'), 'ыц');
+		assert.strictEqual(removeDuplicateLettersBegin('абба'), 'аб');
 		assert.strictEqual(removeDuplicateLettersBegin('=*=== |+|||'), '=* |+');
 	});
 
@@ -26,5 +29,6 @@ QUnit.module('Тестируем функцию removeDuplicateLettersBegin', fu
 		assert.strictEqual(removeDuplicateLettersBegin('мама мыла раму'), 'ма ылру');
 		assert.strictEqual(removeDuplicateLettersBegin('от топота копыт'), 'от пакы');
 		assert.strictEqual(removeDuplicateLettersBegin('hello world'), 'helo wrd');
+		assert.strictEqual(removeDuplicateLettersBegin('frontend best'), 'fronted bs');
 	});
 });
