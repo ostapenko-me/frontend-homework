@@ -48,4 +48,11 @@ QUnit.module('Тестируем функцию union', function () {
 		arrayCompare(union([1, 2, 2], [2, 2, 3], [1, 2, 2, 5], [null, 2, '2', 2, false]), [1, 2, 2, 3, 5, '2', null, false], assert);
 		arrayCompare(union(['1', '2', '3', true], [1, 2, 3, true], [1, 2, '3', false]), ['1', '2', '3', 1, 2, 3, true, false], assert);
 	});
+	
+	QUnit.test('union работает с моими тестами', function (assert) {
+        arrayCompare(union([NaN, true, false, Infinity], [1], [2]), [NaN, true, false, Infinity, 1, 2], assert);
+        arrayCompare(union([], [2, 2, 2, 2], [3, 2]), [2, 3], assert);
+        arrayCompare(union([1, 2, 3], [4, 5, 6]), [1, 2, 3, 4, 5, 6], assert);
+        arrayCompare(union([null, null, NaN], [NaN, false]), [null, null, NaN, false], assert);
+    });
 });
