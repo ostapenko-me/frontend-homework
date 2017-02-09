@@ -36,7 +36,7 @@ QUnit.module('Тестируем функцию union', function () {
 		arrayCompare(union([], []), [], assert);
 		arrayCompare(union([1], [1]), [1], assert);
 		arrayCompare(union([42], [42], [42], [42]), [42], assert);
-		arrayCompare(union(['a', 'a']), ['a'], assert);
+		arrayCompare(union(['a', 'a']), ['a','a'], assert);
 		arrayCompare(union(['a', false], [false, 'a']), ['a', false], assert);
 		arrayCompare(union([NaN, Infinity, NaN], [NaN, Infinity, NaN]), [Infinity, NaN, NaN], assert);
 	});
