@@ -27,4 +27,11 @@ QUnit.module('Тестируем функцию removeDuplicateLettersBegin', fu
 		assert.strictEqual(removeDuplicateLettersBegin('от топота копыт'), 'от пакы');
 		assert.strictEqual(removeDuplicateLettersBegin('hello world'), 'helo wrd');
 	});
+	//мой тест
+	QUnit.test('удаляет пары символов, оставляя только оин из них', function (assert){
+		assert.strictEqual(removeDuplicateLettersBegin('11223344'), '1234');
+		assert.strictEqual(removeDuplicateLettersBegin('aabbccddee'), 'abcde');
+		assert.strictEqual(removeDuplicateLettersBegin('ыыллаа'), 'ыла');
+		assert.strictEqual(removeDuplicateLettersBegin('==||'), '=|');
+	});
 });
