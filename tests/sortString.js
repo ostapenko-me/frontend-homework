@@ -21,4 +21,9 @@ QUnit.module('Тестируем функцию sortString', function () {
 		assert.strictEqual(sortString('i love frontend'), 'defnnort elov i');
 		assert.strictEqual(sortString('hello world'), 'dlorw ehllo');
 	});
+
+  QUnit.test('Функция работает верно', function (assert) {
+    assert.strictEqual(sortString('ママソープフレーム'), 'ーーソフプママムレ', 'Работает с японским алфавитом');
+    assert.strictEqual(sortString('˙†∂∆˚ ®∂∫ ß∆˚ç ©©∂'), '†˙˚∂∆ ˚∆çß ©©∂ ®∂∫', 'Работает с рандомными символами');
+  });
 });
