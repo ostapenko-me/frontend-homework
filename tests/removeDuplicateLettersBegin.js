@@ -27,4 +27,15 @@ QUnit.module('Тестируем функцию removeDuplicateLettersBegin', fu
 		assert.strictEqual(removeDuplicateLettersBegin('от топота копыт'), 'от пакы');
 		assert.strictEqual(removeDuplicateLettersBegin('hello world'), 'helo wrd');
 	});
+
+	QUnit.test('Работает правильно на пустой строке', function (assert) {
+		assert.strictEqual(removeDuplicateLettersBegin(''), '');
+	});
+
+	QUnit.test('Работает правильно на действительно случайной строке', function (assert) {
+		let string = '';
+		for (let i = 0; i < Math.random()*26; i++)
+			string += String.fromCharCode(97 + i);
+		assert.strictEqual(removeDuplicateLettersBegin(string), string);
+	});
 });
