@@ -27,4 +27,22 @@ QUnit.module('Тестируем функцию removeDuplicateLettersEnd', func
 		assert.strictEqual(removeDuplicateLettersEnd('от топота копыт'), 'а копыт');
 		assert.strictEqual(removeDuplicateLettersEnd('hello world'), 'he world');
 	});
+
+	QUnit.test('Правильно отрабатывает на пустых строках', function (assert) {
+        assert.strictEqual(removeDuplicateLettersEnd(''), '');
+    });
+
+    QUnit.test('7-"о"', function (assert) {
+        assert.strictEqual(removeDuplicateLettersEnd('обороноспособность'), 'рпбность');
+    });
+
+    QUnit.test('memes', function (assert) {
+        assert.strictEqual(removeDuplicateLettersEnd('js, kek'), 'js, ek');
+        assert.strictEqual(removeDuplicateLettersEnd('Спасибо мистер Дудец!'), 'Спабомистр Дудец!')
+    });
+
+    QUnit.test('Good night', function (assert) {
+        assert.strictEqual(removeDuplicateLettersEnd('Спокойной ночи!'), 'Спкй ночи!');
+    });
+
 });
