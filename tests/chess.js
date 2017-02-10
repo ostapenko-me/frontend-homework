@@ -36,5 +36,4 @@ QUnit.module('Тестируем функцию chess', function () {
 		assert.strictEqual(chess(8), expected);
 		assert.strictEqual(chess('8'), expected);
 	});
-
 });
