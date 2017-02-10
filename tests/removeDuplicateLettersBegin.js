@@ -33,8 +33,8 @@ QUnit.module('Тестируем функцию removeDuplicateLettersBegin', fu
 	});
 
 	QUnit.test('Работает правильно на действительно случайной строке', function (assert) {
-		var string = '';
-		for (var i = 0; i < Math.random()*26; i++)
+		let string = '';
+		for (let i = 0; i < Math.random()*26; i++)
 			string += String.fromCharCode(97 + i);
 		assert.strictEqual(removeDuplicateLettersBegin(string), string);
 	});
