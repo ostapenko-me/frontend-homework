@@ -3,13 +3,12 @@
 const removeDuplicateLettersEnd = function (string) {
 	var resStr = "";
 
-	strStep:
-		for (var i = 0; i < string.length; i++) {
-			var char = string[i];
-			for (var j = i + 1; j < string.length; j++)
-				if (string[j] == char) continue strStep;
-			resStr += char;
-		}
+	for (var i = 0; i < string.length; i++) {
+		var j = i + 1;
+		for (; j < string.length && string[j] != string[i]; j++);
+		if (j == string.length)
+			resStr += string[i];
+	}
 
 	return resStr;
 };
