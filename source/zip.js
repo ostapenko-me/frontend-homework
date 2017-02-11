@@ -1,19 +1,15 @@
 /*
 	Кадырбеков Данияр АПО-21 вариант №15
 */
-
 'use strict';
-
-const zip = function () {
+const zip = (...rest) => {
 	var finalObject = {};
-
-	for(var j = 0; arguments[j] != undefined; j++){
-		for(var key in arguments[j]){
+	rest.forEach(function(item){
+		for(var key in item){
 			if(finalObject[key] === undefined){
-				finalObject[key] = arguments[j][key];
+				finalObject[key] = item[key];
 			}
 		}
-	}
-
+	});
 	return finalObject;
-};
+}
