@@ -11,3 +11,4 @@ const chess = function (num) {
         .join('');
     return arr;
 };
+
