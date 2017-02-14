@@ -1,13 +1,11 @@
 'use strict';
 
-const sortString = (str) => {
+const sortString = str => {
   let words = str.split(' ');
-  for (let i in words) {
-    words[i] = words[i].split('').sort(stringCompare).join('');
-  }
-  return words.sort(stringCompare).join(' ');
+  let sortedWords = words.map( word => {
+  	return word.split('').sort(stringCompare).join('');
+  });
+  return sortedWords.sort(stringCompare).join(' ');
 };
 
-const stringCompare = (lhs, rhs) => {
-  return lhs.localeCompare(rhs);
-}
+const stringCompare = (lhs, rhs) => lhs.localeCompare(rhs);
