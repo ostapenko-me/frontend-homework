@@ -27,4 +27,17 @@ QUnit.module('Тестируем функцию removeDuplicateLettersEnd', func
 		assert.strictEqual(removeDuplicateLettersEnd('от топота копыт'), 'а копыт');
 		assert.strictEqual(removeDuplicateLettersEnd('hello world'), 'he world');
 	});
+
+	QUnit.test('Удаляет пробелы', function (assert) {
+		assert.strictEqual(removeDuplicateLettersEnd('а     б     с'), 'аб с');
+		assert.strictEqual(removeDuplicateLettersEnd('а           с'), 'а с');
+		assert.strictEqual(removeDuplicateLettersEnd('            с'), ' с');
+	});
+
+	QUnit.test('Работает правильно на спецсимволах', function (assert) {
+		assert.strictEqual(removeDuplicateLettersEnd('\0\\\r\v\t'), '\0\\\r\v\t');
+		assert.strictEqual(removeDuplicateLettersEnd('\0\0\0\0\0'), '\0');
+		assert.strictEqual(removeDuplicateLettersEnd('\0\0\\\v\0\v'), '\\\0\v');
+	});
+
 });
