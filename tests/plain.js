@@ -13,4 +13,10 @@ QUnit.module('Тестируем функцию plain', function () {
 		assert.deepEqual(plain([[42, 42], [42]]), [42, 42, 42]);
 		assert.deepEqual(plain([[1], [2], [3], [4, 5, 6]]), [1, 2, 3, 4, 5, 6]);
 	});
+	
+	QUnit.test('Работает с разными типами данных', function (assert) {
+		assert.deepEqual(plain([['Hello', 'My name', 'is'], ['Rishat']]), ['Hello', 'My name', 'is', 'Rishat']);
+		assert.deepEqual(plain([[[4.2], [4.2]], [42.0, 42.0], [5.8]]), [4.2, 4.2, 42.0, 42.0, 5.8]);
+		assert.deepEqual(plain([[true], [false], [true], [true, false, false]]), [true, false, true, true, false, false]);
+	});
 });
