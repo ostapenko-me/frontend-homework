@@ -1,84 +1,54 @@
 // Kolotovkin Maxim
 
-function killSumbol(s,k) 
-{
-   var n = s.length;
-   var i = 0;
-   var ans = "";
-   
-   for(i = 0; i < n; i++)
-   {
-		if(i != k)
-		{
-			ans += s.charAt(i);
-		}
-		else
-		{
-			ans += "_";
-		}
-   }
-   
-   return ans;
-}
+// homeWork
 
-function fromRoman(s)
-{
+function fromRoman(s) {
 	s = s.toUpperCase();
+
+	let summa = 0;
+	const n = s.length;
 	
-	var n = s.length;
-	var i = 0;
-	var c = '0';
-	var summa = 0;
-	var k = 0;
-	
-	for(i = 0; i < n; ++i)
-	{
-		k = s.indexOf("IV");		
-		if(k != -1)
-		{
+	for(let i = 0; i < n; ++i) {
+		let number = -1;
+		
+		number = s.indexOf("IV");	
+		if(number != -1) {
 			summa += 4;
-			s = killSumbol(s,k);
-			s = killSumbol(s,k+1);
+			s = s.replace("IV", "::");
 		}
 		
-		k = s.indexOf("IX");		
-		if(k != -1)
-		{
+		number = s.indexOf("IX");	
+		if(number != -1) {
 			summa += 9;
-			s = killSumbol(s,k);
-			s = killSumbol(s,k+1);
+			s = s.replace("IX", "::");
 		}
 		
-		k = s.indexOf("XC");		
-		if(k != -1)
-		{
+		number = s.indexOf("XC");	
+		if(number != -1) {
 			summa += 90;
-			s = killSumbol(s,k);
-			s = killSumbol(s,k+1);
+			s = s.replace("XC", "::");
 		}
 		
-		k = s.indexOf("CM");		
-		if(k != -1)
-		{
+		number = s.indexOf("CM");	
+		if(number != -1) {
 			summa += 900;
-			s = killSumbol(s,k);
-			s = killSumbol(s,k+1);
+			s = s.replace("CM", "::");
 		}
 	}
 	
-	for(i = 0; i < n; ++i)
-	{
-		c = s.charAt(i);
+	for(let i = 0; i < n; ++i) {
+		let c = s.charAt(i);
 		
-		if(c == 'I') summa += 1;
-		if(c == 'V') summa += 5;
-		if(c == 'X') summa += 10;
-		if(c == 'L') summa += 50;
-		if(c == 'C') summa += 100;
-		if(c == 'D') summa += 500;
-		if(c == 'M') summa += 1000;
+		switch(c) {
+			case 'I' : summa += 1; break;
+			case 'V' : summa += 5; break;
+			case 'X' : summa += 10; break;
+			case 'L' : summa += 50; break;
+			case 'C' : summa += 100; break;
+			case 'D' : summa += 500; break;
+			case 'M' : summa += 1000; break;
+		}
 	}
 	
 	return summa;
 }
-
