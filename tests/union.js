@@ -38,14 +38,14 @@ QUnit.module('Тестируем функцию union', function () {
 		arrayCompare(union([42], [42], [42], [42]), [42], assert);
 		arrayCompare(union(['a', 'a']), ['a'], assert);
 		arrayCompare(union(['a', false], [false, 'a']), ['a', false], assert);
-		arrayCompare(union([NaN, Infinity, NaN], [NaN, Infinity, NaN]), [Infinity, NaN, NaN], assert);
+		arrayCompare(union([NaN, Infinity, NaN], [NaN, Infinity, NaN]), [Infinity, NaN], assert); //NO DUPLICATES ALLOWED
 	});
 
 	QUnit.test('union работает с разными массивами', function (assert) {
 		arrayCompare(union([], [1], [2]), [1, 2], assert);
 		arrayCompare(union([1], [1], [1, 2]), [1, 2], assert);
 		arrayCompare(union([1, 2, 3], [1, 2, 4], [1, 2, 5]), [2, 1, 3, 4, 5], assert);
-		arrayCompare(union([1, 2, 2], [2, 2, 3], [1, 2, 2, 5], [null, 2, '2', 2, false]), [1, 2, 2, 3, 5, '2', null, false], assert);
+		arrayCompare(union([1, 2, 2], [2, 2, 3], [1, 2, 2, 5], [null, 2, '2', 2, false]), [1, 2, 3, 5, '2', null, false], assert); //NO DUPLICATES ALLOWED
 		arrayCompare(union(['1', '2', '3', true], [1, 2, 3, true], [1, 2, '3', false]), ['1', '2', '3', 1, 2, 3, true, false], assert);
 	});
 });
