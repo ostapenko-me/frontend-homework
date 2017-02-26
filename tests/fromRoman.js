@@ -17,3 +17,14 @@ QUnit.module('Тестируем функцию fromRoman', function () {
 		assert.strictEqual(fromRoman('mmxvii'), 2017);
 	});
 });
+
+QUnit.module('Тестируем функцию fromRoman, свои тесты', function () {
+    QUnit.test('fromRoman работает правильно', function (assert) {
+
+        assert.strictEqual(fromRoman('vii'), 7);
+        assert.strictEqual(fromRoman('MDCccXCI'), 1891);
+
+        assert.strictEqual(fromRoman('MCMXCV'), 1995);
+        assert.strictEqual(fromRoman('mcccXXXI'), 1331);
+    });
+});
